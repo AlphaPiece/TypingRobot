@@ -6,26 +6,27 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 20:42:30 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/02 21:22:53 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/02 21:57:42 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "typing_robot.c"
+#include "typing_robot.h"
 
 char    *generate_str(void)
 {
-    char    c;
     int     len;
+	int		*arr;
     char    *str;
     int     i;
 
-    len = ft_randint(10, 80);
+    len = 20;
     if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
         return (NULL);
-    i = 0;
-    while (i < len)
-        str[i++] = ft_randint(LB, UB);
-    str[i] = '\0';
+	arr = ft_randintarr(LB, UB, len);
+	i = -1;
+	while (++i < len)
+		str[i] = (char)arr[i];
+	str[i] = '\0';
     return (str);
 }
 
@@ -42,7 +43,7 @@ int     main(void)
         output = generate_str();
         ft_printf("%s\n", output);
         free(output);
-        ft_readline(1, &input);
+        ft_nextline(1, &input);
     }
     if (ft_strequ(input, "quit"))
         free(input);
