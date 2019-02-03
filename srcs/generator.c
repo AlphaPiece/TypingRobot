@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   typing_robot.h                                     :+:      :+:    :+:   */
+/*   generator.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/02 21:16:51 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/03 12:27:38 by Zexi Wang        ###   ########.fr       */
+/*   Created: 2019/02/02 20:42:30 by Zexi Wang         #+#    #+#             */
+/*   Updated: 2019/02/03 12:28:49 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPING_ROBOT_H
-# define TYPING_ROBOT_H
+#include "typing_robot.h"
 
-# include "libft.h"
+char    *generator(void)
+{
+    int     len;
+	int		*arr;
+    char    *str;
+    int     i;
 
-# define LB	32
-# define UB	126
-
-void	interface(void);
-char	*generator(void);
-
-#endif
+    len = 20;
+    if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+        return (NULL);
+	arr = ft_randintarr(LB, UB, len);
+	i = -1;
+	while (++i < len)
+		str[i] = (char)arr[i];
+	str[i] = '\0';
+    return (str);
+}

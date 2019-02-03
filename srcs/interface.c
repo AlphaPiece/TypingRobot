@@ -1,52 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   generate.c                                         :+:      :+:    :+:   */
+/*   interface.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/02 20:42:30 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/02 21:57:42 by Zexi Wang        ###   ########.fr       */
+/*   Created: 2019/02/03 12:22:54 by Zexi Wang         #+#    #+#             */
+/*   Updated: 2019/02/03 12:40:14 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "typing_robot.h"
 
-char    *generate_str(void)
+void	interface(void)
 {
-    int     len;
-	int		*arr;
-    char    *str;
-    int     i;
-
-    len = 20;
-    if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
-        return (NULL);
-	arr = ft_randintarr(LB, UB, len);
-	i = -1;
-	while (++i < len)
-		str[i] = (char)arr[i];
-	str[i] = '\0';
-    return (str);
-}
-
-int     main(void)
-{
+    char    *signal;
     char    *input;
     char    *output;
 
-    input = "";
-    while (!ft_strequ(input, "quit"))
+    ft_printf("Let's start training!\n");
+	ft_putncharln('=', 80);
+    signal = "";
+    while (!ft_strequ(signal, "N"))
     {
-        if (*input)
-            free(input);
-        output = generate_str();
+        if (*signal)
+            free(signal);
+        output = generator();
         ft_printf("%s\n", output);
         free(output);
         ft_nextline(1, &input);
-    }
-    if (ft_strequ(input, "quit"))
         free(input);
+		ft_printf("\nNext line? (y/N)\n");
+        ft_nextline(1, &signal);
+		ft_putncharln('=', 80);
+    }
+    if (ft_strequ(signal, "N"))
+        free(signal);
     ft_printf("Have a great day.\n");
-    return (0);
 }
