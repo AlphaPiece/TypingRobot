@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 21:16:51 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/03 12:27:38 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/03 15:55:03 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 
 # include "libft.h"
 
-# define LB	32
-# define UB	126
+# define LB		33
+# define UB		126
+# define LIMIT	80
 
 void	interface(void);
 char	*generator(void);
+void	report(char *output, char *input, int len, double second);
 
 #endif
