@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 21:16:51 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/03 18:49:09 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/03 20:32:57 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,20 @@
 
 # include "libft.h"
 
-# define LB		33
-# define UB		126
-# define LIMIT	80
+# define LB			33
+# define UB			126
+# define LIMIT		80
+
+# define TITLE1		"--.--          o              ,---.     |         |"
+# define TITLE2		"  |  ,   .,---..,---.,---.    |---',---.|---.,---.|---"
+# define TITLE3		"  |  |   ||   |||   ||   |    |  \\ |   ||   ||   ||"
+# define TITLE4		"  `  `---||---'``   '`---|    `   ``---'`---'`---'`---'"
+# define TITLE5		"     `---'|          `---'"
+
+# define EPILOGUE1	"                    .           ."
+# define EPILOGUE2	",-. ,-. ,-,-. ,-.   |-. ,-. ,-. | ,   ,-. ,-. ,-. ,-."
+# define EPILOGUE3	"|   | | | | | |-'   | | ,-| |   |<    `-. | | | | | |"
+# define EPILOGUE4	"`-' `-' ' ' ' `-'   ^-' `-^ `-' ' `   `-' `-' `-' ' '"
 
 void	interface(void);
 char	*generator(void);

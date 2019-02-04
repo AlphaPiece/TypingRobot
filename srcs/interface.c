@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 18:31:48 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/03 19:31:17 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/03 20:35:24 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void		interface(void)
 		ft_printf("Ready? (y/N)\n");
 		ft_nextline(1, &signal);
 	}
+	system("clear");
 	ft_putncharln('=', LIMIT);
 	while (!ft_strequ(signal, "N"))
 	{
@@ -51,9 +52,9 @@ void		interface(void)
 		one_round();
 		ft_printf("\nNext round? (y/N)\n");
 		ft_nextline(1, &signal);
+		system("clear");
 		ft_putncharln('=', LIMIT);
 	}
 	if (ft_strequ(signal, "N"))
 		free(signal);
-	ft_printf("Have a great day.\n");
 }
