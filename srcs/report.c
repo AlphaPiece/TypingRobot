@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 15:08:32 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/03 18:56:56 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/04 11:16:46 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	speed_level(int cps)
 {
-	if (cps >= 20)
+	if (cps >= 16)
 		ft_printf("Speed: " CYAN "%s\n" RESET, "S");
-	else if (cps >= 15)
+	else if (cps >= 8)
 		ft_printf("Speed: " MAGENTA "%s\n" RESET, "A");
-	else if (cps >= 10)
+	else if (cps >= 4)
 		ft_printf("Speed: " GREEN "%s\n" RESET, "B");
-	else if (cps >= 5)
+	else if (cps >= 2)
 		ft_printf("Speed: " YELLOW "%s\n" RESET, "C");
 	else
 		ft_printf("Speed: " RED "%s\n" RESET, "D");
@@ -47,7 +47,7 @@ void	report(char *output, char *input, int len, int sec)
 	ft_printf("Characters: %d\n", len);
 	ft_printf("Time: %ds\n", sec);
 	if (sec == 0)
-		speed_level(len * 2);
+		speed_level(len * 2 - len / 2);
 	else
 		speed_level(len / sec);
 }	
