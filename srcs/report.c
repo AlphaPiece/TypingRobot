@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 15:08:32 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/04 14:38:34 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/04 14:47:14 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	accuracy_level(int typo)
 	else if (typo == 1)
 		ft_printf("Accuracy: " GREEN "Good\n" RESET);
 	else if (typo == 2)
-		ft_printf("Accuracy: " YELLOW "Adequate\n", RESET);
+		ft_printf("Accuracy: " YELLOW "Adequate\n" RESET);
 	else
-		ft_printf("Accuracy: " RED "Inadequate\n", RESET);
+		ft_printf("Accuracy: " RED "Inadequate\n" RESET);
 }
 
 void	report(char *output, char *input, int len, int sec)
