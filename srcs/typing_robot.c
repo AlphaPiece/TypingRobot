@@ -6,14 +6,14 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 12:26:09 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/04 14:49:04 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/04 15:02:03 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "typing_robot.h"
 
 int		*g_len_arr;
-int		g_i = -1;
+int		g_i = LIMIT;
 
 void	title(void)
 {
@@ -33,8 +33,6 @@ void	epilogue(void)
 int		main(void)
 {
 	title();
-	if (!(g_len_arr = ft_randintarr(10, 80, LIMIT)))
-		return (1);
 	interface();
 	epilogue();
 	return (0);

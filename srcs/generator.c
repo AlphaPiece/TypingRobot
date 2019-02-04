@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 19:37:38 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/03 19:37:43 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/04 15:02:28 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ char		*generator(void)
 	char	*str;
 	int	 i;
 
+	if (g_i + 1 >= LIMIT)
+	{
+		if (g_i == LIMIT)
+			free(g_len_arr);
+		if (!(g_len_arr = ft_randintarr(10, 80, LIMIT)))
+			return (NULL);
+		g_i = -1;
+	}
 	if (!(str = (char *)malloc(sizeof(char) * (g_len_arr[++g_i] + 1))))
 		return (NULL);
 	arr = ft_randintarr(LB, UB, g_len_arr[g_i]);

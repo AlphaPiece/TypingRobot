@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 21:16:51 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/04 14:48:49 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/04 15:33:49 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,17 @@
 # define EPILOGUE3	"|   | | | | | |-'   | | ,-| |   |<    `-. | | | | | |"
 # define EPILOGUE4	"`-' `-' ' ' ' `-'   ^-' `-^ `-' ' `   `-' `-' `-' ' '"
 
-void	interface(void);
-char	*generator(void);
-void	report(char *output, char *input, int len, int sec);
+typedef struct	s_stat
+{
+	int			chr;
+	int			sec;
+	int			typo;
+	int			round;
+}				t_stat;
+
+void			interface(void);
+char			*generator(void);
+t_bool			report(char *output, char *input, int len, int sec);
+void			summary(void);
 
 #endif
