@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 21:16:51 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/03 15:55:03 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/03 18:49:09 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@
 
 void	interface(void);
 char	*generator(void);
-void	report(char *output, char *input, int len, double second);
+void	report(char *output, char *input, int len, int sec);
 
 #endif
