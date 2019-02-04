@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 21:16:51 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/04 15:33:49 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/04 16:21:16 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@
 # define TITLE3		"  |  |   ||   |||   ||   |    |  \\ |   ||   ||   ||"
 # define TITLE4		"  `  `---||---'``   '`---|    `   ``---'`---'`---'`---'"
 # define TITLE5		"     `---'|          `---'     As precise as a robot."
-
-# define EPILOGUE1	"                    .           ."
-# define EPILOGUE2	",-. ,-. ,-,-. ,-.   |-. ,-. ,-. | ,   ,-. ,-. ,-. ,-."
-# define EPILOGUE3	"|   | | | | | |-'   | | ,-| |   |<    `-. | | | | | |"
-# define EPILOGUE4	"`-' `-' ' ' ' `-'   ^-' `-^ `-' ' `   `-' `-' `-' ' '"
 
 typedef struct	s_stat
 {

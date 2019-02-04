@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 15:08:32 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/04 15:43:07 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/04 16:19:00 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ void	speed_level(int cps)
 
 t_bool	accuracy_level(int typo)
 {
-	if (typo == 0)
+	if (stat.typo == 0 && stat.round >= 100)
+		ft_printf("Accuracy: " CYAN "Perfect\n" RESET);
+	else if (typo == 0)
 		ft_printf("Accuracy: " MAGENTA "Excellent\n" RESET);
 	else if (typo == 1)
 		ft_printf("Accuracy: " GREEN "Good\n" RESET);
@@ -85,10 +87,14 @@ void	summary(void)
 	ft_putncharln('-', LIMIT);
 	ft_printf("Characters: %d\n", stat.chr);
 	ft_printf("Time: %ds\n", stat.sec);
-	accuracy_level(stat.typo / stat.round);
+	if (stat.round == 0)
+		accuracy_level(3);
+	else
+		accuracy_level(stat.typo / stat.round);
 	if (stat.sec == 0)
 		speed_level(stat.chr * 2 - stat.chr / 2);
 	else
 		speed_level(stat.chr / stat.sec);
+	ft_printf("\n(Note: Rounds with inadequate accurary were not recorded.)\n");
 	ft_putncharln('=', LIMIT);
 }
