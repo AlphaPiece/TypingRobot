@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 15:08:32 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/04 16:19:00 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/04 20:56:19 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,6 @@ void	summary(void)
 		speed_level(stat.chr * 2 - stat.chr / 2);
 	else
 		speed_level(stat.chr / stat.sec);
-	ft_printf("\n(Note: Rounds with inadequate accurary were not recorded.)\n");
+	ft_printf("\n(Note: Rounds with inadequate accuracy were not recorded.)\n");
 	ft_putncharln('=', LIMIT);
 }
