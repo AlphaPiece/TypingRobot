@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 15:08:32 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/04 20:56:19 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/04 22:20:37 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,54 @@
 
 t_stat	stat;
 
-void	speed_level(int cps)
+void	speed_level(int len, int sec)
 {
-	if (cps >= 16)
-		ft_printf("Speed: " CYAN "S\n" RESET);
-	else if (cps >= 8)
-		ft_printf("Speed: " MAGENTA "A\n" RESET);
-	else if (cps >= 4)
-		ft_printf("Speed: " GREEN "B\n" RESET);
-	else if (cps >= 2)
-		ft_printf("Speed: " YELLOW "C\n" RESET);
+	int		cps;
+	int		sec_to_next_lev;
+	char	next_lev;
+
+	if (sec == 0)
+		cps = len * 2 - len / 2;
 	else
-		ft_printf("Speed: " RED "D\n" RESET);
+		cps = len / sec;
+	if (cps >= 16)
+	{
+		ft_printf("Speed: " CYAN "S " RESET);
+		sec_to_next_lev = 0;
+	}
+	else if (cps >= 8)
+	{
+		ft_printf("Speed: " MAGENTA "A " RESET);
+		sec_to_next_lev = sec - len / 16;
+		next_lev = 'S';
+	}
+	else if (cps >= 4)
+	{
+		ft_printf("Speed: " GREEN "B " RESET);
+		sec_to_next_lev = sec - len / 8;
+		next_lev = 'A';
+	}
+	else if (cps >= 2)
+	{
+		ft_printf("Speed: " YELLOW "C " RESET);
+		sec_to_next_lev = sec - len / 4;
+		next_lev = 'B';
+	}
+	else
+	{
+		ft_printf("Speed: " RED "D " RESET);
+		sec_to_next_lev = sec - len / 2;
+		next_lev = 'C';
+	}
+	if (len)
+	{
+		if (sec_to_next_lev == 0 && len != 0)
+			ft_printf(CYAN "[Legendary!]\n" RESET);
+		else
+			ft_printf("[-%ds -> %c]\n", sec_to_next_lev, next_lev);
+	}
+	else
+		ft_printf(RED "[Please try harder.]" RESET);
 }
 
 t_bool	accuracy_level(int typo)
@@ -73,13 +109,10 @@ t_bool	report(char *output, char *input, int len, int sec)
 		stat.chr += len;
 		stat.sec += sec;
 		stat.typo += typo;
-	}	
-	if (sec == 0)
-		speed_level(len * 2 - len / 2);
-	else
-		speed_level(len / sec);
+	}
+	speed_level(len, sec);
 	return (is_valid);
-}
+}		
 
 void	summary(void)
 {
@@ -91,10 +124,7 @@ void	summary(void)
 		accuracy_level(3);
 	else
 		accuracy_level(stat.typo / stat.round);
-	if (stat.sec == 0)
-		speed_level(stat.chr * 2 - stat.chr / 2);
-	else
-		speed_level(stat.chr / stat.sec);
+	speed_level(stat.chr, stat.sec);
 	ft_printf("\n(Note: Rounds with inadequate accuracy were not recorded.)\n");
 	ft_putncharln('=', LIMIT);
 }
