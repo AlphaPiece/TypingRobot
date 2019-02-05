@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 15:08:32 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/04 22:20:37 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/05 16:23:46 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,10 @@ void	speed_level(int len, int sec)
 		sec_to_next_lev = sec - len / 2;
 		next_lev = 'C';
 	}
-	if (len)
-	{
-		if (sec_to_next_lev == 0 && len != 0)
-			ft_printf(CYAN "[Legendary!]\n" RESET);
-		else
-			ft_printf("[-%ds -> %c]\n", sec_to_next_lev, next_lev);
-	}
+	if (sec_to_next_lev == 0 && len != 0)
+		ft_printf(CYAN "[Legendary!]\n" RESET);
 	else
-		ft_printf(RED "[Please try harder.]" RESET);
+		ft_printf("[-%ds -> %c]\n", sec_to_next_lev, next_lev);
 }
 
 t_bool	accuracy_level(int typo)
@@ -110,7 +105,8 @@ t_bool	report(char *output, char *input, int len, int sec)
 		stat.sec += sec;
 		stat.typo += typo;
 	}
-	speed_level(len, sec);
+	if (typo < 3 && len > 0)
+		speed_level(len, sec);
 	return (is_valid);
 }		
 
@@ -120,11 +116,10 @@ void	summary(void)
 	ft_putncharln('-', LIMIT);
 	ft_printf("Characters: %d\n", stat.chr);
 	ft_printf("Time: %ds\n", stat.sec);
-	if (stat.round == 0)
-		accuracy_level(3);
-	else
+	if (stat.round > 0)
 		accuracy_level(stat.typo / stat.round);
-	speed_level(stat.chr, stat.sec);
+	if (stat.round > 0 && stat.typo / stat.round < 3)
+		speed_level(stat.chr, stat.sec);
 	ft_printf("\n(Note: Rounds with inadequate accuracy were not recorded.)\n");
 	ft_putncharln('=', LIMIT);
 }
