@@ -5,49 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/03 12:26:09 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/05 16:32:01 by Zexi Wang        ###   ########.fr       */
+/*   Created: 2019/02/07 00:08:22 by Zexi Wang         #+#    #+#             */
+/*   Updated: 2019/02/07 00:19:02 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "typing_robot.h"
 
 int		*g_len_arr;
-int		g_i = LIMIT;
+int		g_i = LIMIT + 1;
 
-void	title(void)
+void	reset_randint(int lower, int upper)
 {
-	system("clear");
-	ft_putncharln('#', LIMIT);
-	ft_printf("\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n",
-				TITLE1, TITLE2, TITLE3, TITLE4, TITLE5);
-	ft_putncharln('#', LIMIT);
-	ft_putchar('\n');
-}
-
-void	epilogue(void)
-{
-	char	*s;
-
-	s = "      .       .      .                 . .    .     .  .\n" \
-	". , , |-. ,-. |-   ,-| ,-. ,-. ,-. ,-. ' |-   | , . |  |    . . ,-. . .\n"\
-	"|/|/  | | ,-| |    | | | | |-' `-. | |   |    |<  | |  |    | | | | | |\n"\
-	"' '   ' ' `-^ `'   `-^ `-' `-' `-' ' '   `'   ' ` ' `' `'   `-| `-' `-^\n"\
-	"                                                             /|\n" \
-	"                                                            `-'\n" \
-	"          .                               .\n" \
-	",-,-. ,-. | , ,-. ,-.   . . ,-. . .   ,-. |- ,-. ,-. ,-. ,-. ,-. ,-.\n" \
-	"| | | ,-| |<  |-' `-.   | | | | | |   `-. |  |   | | | | | | |-' |\n" \
-	"' ' ' `-^ ' ` `-' `-'   `-| `-' `-^   `-' `' '   `-' ' ' `-| `-' '\n" \
-	"                         /|                               ,|\n" \
-	"                        `-'                               `'\n";
-	ft_printf("%s\n", s);
+	if (g_i == LIMIT)
+		free(g_len_arr);
+	if (!(g_len_arr = ft_randintarr(lower, upper, LIMIT)))
+		exit(1);;
+	g_i = -1;
 }
 
 int		main(void)
 {
-	title();
 	interface();
-	epilogue();
 	return (0);
 }

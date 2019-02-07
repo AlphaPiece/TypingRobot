@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 21:16:51 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/06 17:27:45 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/07 00:18:09 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 
 # include "libft.h"
 
-# define LB			33
-# define UB			126
+# define ASCII_LB	33
+# define ASCII_UB	126
+# define STR_LEN_LB	10
+# define STR_LEN_UB	80
 # define LIMIT		80
 
 # define TITLE1		"--.--          o              ,---.     |         |"
@@ -32,6 +34,8 @@ typedef struct	s_stat
 	int			typo;
 	int			round;
 }				t_stat;
+
+void			reset_randint(int lower, int upper);
 
 void			string_mode(void);
 char			*str_generate(void);
