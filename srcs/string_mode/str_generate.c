@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   generator.c                                        :+:      :+:    :+:   */
+/*   str_generate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 19:37:38 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/04 15:02:28 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/06 17:25:30 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 extern int	*g_len_arr;
 extern int	g_i;
 
-char		*generator(void)
+char		*str_generate(void)
 {
  	int		*arr;
 	char	*str;

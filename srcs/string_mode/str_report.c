@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   report.c                                           :+:      :+:    :+:   */
+/*   str_report.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 15:08:32 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/05 16:23:46 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/06 19:59:54 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ t_bool	accuracy_level(int typo)
 	return (true);
 }
 
-t_bool	report(char *output, char *input, int len, int sec)
+t_bool	str_report(char *output, char *input, int len, int sec)
 {
 	int		i;
 	int		typo;
@@ -110,9 +110,12 @@ t_bool	report(char *output, char *input, int len, int sec)
 	return (is_valid);
 }		
 
-void	summary(void)
+void	str_summary(void)
 {
-	ft_printf("\t\t\t\t>>> Summary <<<\n");
+	system("clear");
+	ft_putncharln('=', LIMIT);
+	ft_putnchar(' ', 32);
+	ft_printf(">>> Summary <<<\n");
 	ft_putncharln('-', LIMIT);
 	ft_printf("Characters: %d\n", stat.chr);
 	ft_printf("Time: %ds\n", stat.sec);
