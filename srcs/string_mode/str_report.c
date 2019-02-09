@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 15:08:32 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/06 19:59:54 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/09 12:10:27 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,12 @@ t_bool	str_report(char *output, char *input, int len, int sec)
 	while (++i < len)
 		if (output[i] != input[i])
 		{
-			ft_printf(RED "%c", output[i]);
+			ft_printf(RED "%c" RESET, output[i]);
 			typo++;
 		}
 		else
 			ft_printf(" ");
-	ft_printf(RESET "\n");
+	ft_printf("\n");
 	ft_putncharln('-', LIMIT);
 	ft_printf("Characters: %d\n", len);
 	ft_printf("Time: %ds\n", sec);

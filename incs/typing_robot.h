@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 21:16:51 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/07 00:18:09 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/02/09 15:45:17 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define TYPING_ROBOT_H
 
 # include "libft.h"
+# include "dirent.h"
 
 # define ASCII_LB	33
 # define ASCII_UB	126
@@ -42,6 +43,8 @@ char			*str_generate(void);
 t_bool			str_report(char *output, char *input, int len, int sec);
 void			str_summary(void);
 
+void			alg_update(void);
+int				alg_select(char *code[]);
 void			algorithm_mode(void);
 
 void			interface(void);
