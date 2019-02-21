@@ -3,7 +3,7 @@ A robot that helps you practice typing.
 
 This is a typing software for programmers. It will generate random printable ascii character strings, like
 ```
-k/JgwDz.wCG+fo&q90Q{$sV+hs!#Pqe?sA/,uS-@S.A0xVO{%=J_/u$LcAa!!cikt7I-X~4p
+rNl+@g7f2e>(+c[=uJlY-=IONIPM;k!Nhc9zw!@/v#133|hI'W[{/0cu
 ```
 
 After you finish typing this line, press enter. TypingRobot will give you a summary about your practice.
