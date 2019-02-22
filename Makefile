@@ -6,11 +6,11 @@
 #    By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/02 21:23:18 by Zexi Wang         #+#    #+#              #
-#    Updated: 2019/02/09 17:18:20 by Zexi Wang        ###   ########.fr        #
+#    Updated: 2019/02/22 17:17:12 by Zexi Wang        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = typing_robot
+NAME = tybot
 CC = gcc
 #CFLAGS = -Wall -Wextra -Werror
 
