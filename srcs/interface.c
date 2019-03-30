@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 18:31:48 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/09 17:15:50 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/03/30 14:07:19 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,17 @@
 
 void    title(void)
 {
-    system("clear");
-    ft_putncharln('#', LIMIT);
-    ft_printf("\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n",
-                TITLE1, TITLE2, TITLE3, TITLE4, TITLE5);
-    ft_putncharln('#', LIMIT);
-    ft_putchar('\n');
+	ft_printf("tybot 1.0\n");
+	ft_printf("Created by AlphaPiece Studio.\n");
 }
 
 void    epilogue(void)
 {
     char    *s;
-
-    s = "      .       .      .                 . .    .     .  .\n" \
-    ". , , |-. ,-. |-   ,-| ,-. ,-. ,-. ,-. ' |-   | , . |  |    . . ,-. . .\n"\
-    "|/|/  | | ,-| |    | | | | |-' `-. | |   |    |<  | |  |    | | | | | |\n"\
-    "' '   ' ' `-^ `'   `-^ `-' `-' `-' ' '   `'   ' ` ' `' `'   `-| `-' `-^\n"\
-    "                                                             /|\n" \
-    "                                                            `-'\n" \
-    "          .                               .\n" \
-    ",-,-. ,-. | , ,-. ,-.   . . ,-. . .   ,-. |- ,-. ,-. ,-. ,-. ,-. ,-.\n" \
-    "| | | ,-| |<  |-' `-.   | | | | | |   `-. |  |   | | | | | | |-' |\n" \
-    "' ' ' `-^ ' ` `-' `-'   `-| `-' `-^   `-' `' '   `-' ' ' `-| `-' '\n" \
-    "                         /|                               ,|\n" \
-    "                        `-'                               `'\n";
-    ft_printf("%s\n", s);
+    
+	ft_printf("\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n",
+                EPI1, EPI2, EPI3, EPI4, EPI5);
+	ft_putnchar('=', LIMIT);
 }
 
 void	interface(void)
@@ -49,5 +35,3 @@ void	interface(void)
 	string_mode();
 	epilogue();
 }
-	
-	

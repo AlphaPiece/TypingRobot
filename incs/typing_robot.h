@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 21:16:51 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/09 15:45:17 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/03/30 14:08:07 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@
 # define STR_LEN_UB	80
 # define LIMIT		80
 
-# define TITLE1		"--.--          o              ,---.     |         |"
-# define TITLE2		"  |  ,   .,---..,---.,---.    |---',---.|---.,---.|---"
-# define TITLE3		"  |  |   ||   |||   ||   |    |  \\ |   ||   ||   ||"
-# define TITLE4		"  `  `---||---'``   '`---|    `   ``---'`---'`---'`---'"
-# define TITLE5		"     `---'|          `---'     As precise as a robot."
+# define EPI1		"--.--          o              ,---.     |         |"
+# define EPI2		"  |  ,   .,---..,---.,---.    |---',---.|---.,---.|---"
+# define EPI3		"  |  |   ||   |||   ||   |    |  \\ |   ||   ||   ||"
+# define EPI4		"  `  `---||---'``   '`---|    `   ``---'`---'`---'`---'"
+# define EPI5		"     `---'|          `---'     As precise as a robot."
 
 typedef struct	s_stat
 {
