@@ -6,7 +6,7 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 18:31:48 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/03/30 14:07:19 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/04/12 10:59:32 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ void    epilogue(void)
 {
     char    *s;
     
-	ft_printf("\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n",
+	ft_printf("\t%s\n\t%s\n\t%s\n\t%s\n\t%s\n\n",
                 EPI1, EPI2, EPI3, EPI4, EPI5);
-	ft_putnchar('=', LIMIT);
 }
 
 void	interface(void)
