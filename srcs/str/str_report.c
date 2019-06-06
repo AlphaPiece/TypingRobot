@@ -6,13 +6,11 @@
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/03 15:08:32 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/09 12:10:27 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/06/05 17:49:19 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "typing_robot.h"
-
-t_stat	stat;
+#include "tybot.h"
 
 void	speed_level(int len, int sec)
 {
@@ -59,9 +57,9 @@ void	speed_level(int len, int sec)
 		ft_printf("[-%ds -> %c]\n", sec_to_next_lev, next_lev);
 }
 
-t_bool	accuracy_level(int typo)
+t_bool	accuracy_level(t_stat *stat, int typo)
 {
-	if (stat.typo == 0 && stat.round >= 100)
+	if (stat->typo == 0 && stat->round >= 100)
 		ft_printf("Accuracy: " CYAN "Perfect\n" RESET);
 	else if (typo == 0)
 		ft_printf("Accuracy: " MAGENTA "Excellent\n" RESET);
@@ -77,12 +75,14 @@ t_bool	accuracy_level(int typo)
 	return (true);
 }
 
-t_bool	str_report(char *output, char *input, int len, int sec)
+t_bool	str_report(t_stat *stat, char *output, char *input, int sec)
 {
+	int		len;
 	int		i;
 	int		typo;
 	t_bool	is_valid;
 
+	len = ft_strlen(output);
 	is_valid = false;
 	i = -1;
 	typo = 0;
@@ -98,31 +98,30 @@ t_bool	str_report(char *output, char *input, int len, int sec)
 	ft_putncharln('-', LIMIT);
 	ft_printf("Characters: %d\n", len);
 	ft_printf("Time: %ds\n", sec);
-	if (accuracy_level(typo))
+	if (accuracy_level(stat, typo))
 	{
 		is_valid = true;
-		stat.chr += len;
-		stat.sec += sec;
-		stat.typo += typo;
+		stat->chr += len;
+		stat->sec += sec;
+		stat->typo += typo;
 	}
 	if (typo < 3 && len > 0)
 		speed_level(len, sec);
 	return (is_valid);
 }		
 
-void	str_summary(void)
+void	str_summary(t_stat *stat)
 {
 	system("clear");
 	ft_putncharln('=', LIMIT);
 	ft_putnchar(' ', 32);
 	ft_printf(">>> Summary <<<\n");
 	ft_putncharln('-', LIMIT);
-	ft_printf("Characters: %d\n", stat.chr);
-	ft_printf("Time: %ds\n", stat.sec);
-	if (stat.round > 0)
-		accuracy_level(stat.typo / stat.round);
-	if (stat.round > 0 && stat.typo / stat.round < 3)
-		speed_level(stat.chr, stat.sec);
+	ft_printf("Characters: %d\n", stat->chr);
+	ft_printf("Time: %ds\n", stat->sec);
+	if (stat->round > 0)
+		accuracy_level(stat, stat->typo / stat->round);
+	if (stat->round > 0 && stat->typo / stat->round < 3)
+		speed_level(stat->chr, stat->sec);
 	ft_printf("\n(Note: Rounds with inadequate accuracy were not recorded.)\n");
-	ft_putncharln('=', LIMIT);
 }

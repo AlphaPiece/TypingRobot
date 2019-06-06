@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   typing_robot.c                                     :+:      :+:    :+:   */
+/*   senten_generate.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/07 00:08:22 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/02/07 00:19:02 by Zexi Wang        ###   ########.fr       */
+/*   Created: 2019/06/05 17:57:16 by Zexi Wang         #+#    #+#             */
+/*   Updated: 2019/06/05 20:10:32 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "typing_robot.h"
+#include "tybot.h"
 
-int		*g_len_arr;
-int		g_i = LIMIT + 1;
-
-void	reset_randint(int lower, int upper)
+char	*senten_generate(void)
 {
-	if (g_i == LIMIT)
-		free(g_len_arr);
-	if (!(g_len_arr = ft_randintarr(lower, upper, LIMIT)))
-		exit(1);;
-	g_i = -1;
-}
+	char	*line;
+	int		num, index, i;
+	char	*file;
+	char	*path;
+	int		fd;
 
-int		main(void)
-{
-	interface();
-	return (0);
-}
+	fd = open("data/names.txt", O_RDONLY);
+	ft_nextline(fd, &line);
+	num = ft_atoi(line);
+	free(line);
+	index = ft_randint(1, num);
+	

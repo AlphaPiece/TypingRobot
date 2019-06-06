@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   typing_robot.h                                     :+:      :+:    :+:   */
+/*   tybot.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Zexi Wang <twopieces0921@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/02 21:16:51 by Zexi Wang         #+#    #+#             */
-/*   Updated: 2019/03/30 14:08:07 by Zexi Wang        ###   ########.fr       */
+/*   Updated: 2019/06/05 17:42:10 by Zexi Wang        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TYPING_ROBOT_H
-# define TYPING_ROBOT_H
+#ifndef TYBOT_H
+# define TYBOT_H
 
 # include "libft.h"
-# include "dirent.h"
+# include <dirent.h>
 
 # define ASCII_LB	33
 # define ASCII_UB	126
@@ -36,17 +36,11 @@ typedef struct	s_stat
 	int			round;
 }				t_stat;
 
-void			reset_randint(int lower, int upper);
-
-void			string_mode(void);
+void			str_mode(t_stat *stat);
 char			*str_generate(void);
-t_bool			str_report(char *output, char *input, int len, int sec);
-void			str_summary(void);
+t_bool			str_report(t_stat *stat, char *output, char *input, int sec);
+void			str_summary(t_stat *stat);
 
-void			alg_update(void);
-int				alg_select(char *code[]);
-void			algorithm_mode(void);
-
-void			interface(void);
+void			senten_mode(t_stat *stat);
 
 #endif
