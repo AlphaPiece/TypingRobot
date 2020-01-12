@@ -1,4 +1,4 @@
-# TypingRobot
+# Typing Robot
 A robot called tybot that helps you practice typing.
 
 This is a typing software for programmers. It will generate random printable ascii character strings, like
