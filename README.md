@@ -2,7 +2,7 @@
 
 ![Intro Image](https://user-images.githubusercontent.com/30487160/72862592-be635600-3c9b-11ea-9d65-69ffec10dbd8.png)
 
-A robot called tybot that helps you practice typing.
+A robot called "tybot" that helps you practice typing.
 
 This is a typing software for programmers. It will generate random printable ascii character strings, like
 ```
