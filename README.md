@@ -13,6 +13,8 @@ After you finish typing this line, press enter; typbot will give you a summary a
 
 ![Screen Shot](https://user-images.githubusercontent.com/30487160/53207309-617d9c80-3601-11e9-8c96-72e05c687c0b.png)
 
+![Screen Shot](https://user-images.githubusercontent.com/30487160/73129997-4c9e4b80-3fbe-11ea-8897-b47f02a1df34.png)
+
 Be aware that this is not a beginner-friendly typing software! 
 It is designed for adept programmers or typists who want to master all-key typing.
 ### Enjoy!
